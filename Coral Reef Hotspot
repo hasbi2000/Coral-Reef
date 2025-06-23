@@ -10,6 +10,9 @@ ee.Initialize(
     opt_url = 'https://earthengine-highvolume.googleapis.com'
 )
 
+map = geemap.Map(basemap = 'SATELLITE')
+map
+
 roi = map.draw_last_feature.geometry()
 
 terumbu_karang = ee.Image("ACA/reef_habitat/v2_0").select('benthic').clip(roi)
